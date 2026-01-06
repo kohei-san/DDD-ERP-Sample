@@ -1,6 +1,6 @@
 ﻿namespace DDD_ERP_Sample
 {
-    partial class Form1
+    partial class MainMenuForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnItemMenu = new Button();
+            SuspendLayout();
+            // 
+            // btnItemMenu
+            // 
+            btnItemMenu.Location = new Point(142, 82);
+            btnItemMenu.Name = "btnItemMenu";
+            btnItemMenu.Size = new Size(94, 29);
+            btnItemMenu.TabIndex = 0;
+            btnItemMenu.Text = "Item";
+            btnItemMenu.UseVisualStyleBackColor = true;
+            btnItemMenu.Click += btnItemMenu_Click;
+            // 
+            // MainMenuForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnItemMenu);
+            Name = "MainMenuForm";
+            Text = "MainMenu";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnItemMenu;
     }
 }
