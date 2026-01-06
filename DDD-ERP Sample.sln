@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD-ERP Sample", "DDD-ERP Sample\DDD-ERP Sample.csproj", "{B867718C-767D-4FEB-8B46-2A0DA545EBBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E32A48E2-AC9B-4AA1-BE84-042D78F47F8A}
+	EndGlobalSection
+EndGlobal
