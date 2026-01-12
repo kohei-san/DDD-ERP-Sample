@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Item.Application.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace DDD_ERP_Sample.Forms.Item
         public ItemMasterRegisterForm()
         {
             InitializeComponent();
+
+            ItemApplicationService itemService = new ItemApplicationService();
+            var viewModel = itemService.ItemMasterMaintainShow(null);
         }
     }
 }
