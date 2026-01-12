@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace DDD_ERP_Sample.Forms.Item
 {
-    public partial class ItemMenuForm : Form
+    public partial class ItemMasterRegisterForm : Form
     {
-        public ItemMenuForm()
+        public ItemMasterRegisterForm()
         {
             InitializeComponent();
-        }
-
-        private void btnItemRegister_Click(object sender, EventArgs e)
-        {
-            using var form = new ItemMasterRegisterForm();
-            form.ShowDialog();
         }
     }
 }

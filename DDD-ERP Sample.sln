@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "DDD-ERP Sample\UI.csproj", "{B867718C-767D-4FEB-8B46-2A0DA545EBBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Item.Application", "Item.Application\Item.Application.csproj", "{29C0F5C6-09F5-40CD-A3AC-D53043BFEB28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B867718C-767D-4FEB-8B46-2A0DA545EBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C0F5C6-09F5-40CD-A3AC-D53043BFEB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C0F5C6-09F5-40CD-A3AC-D53043BFEB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C0F5C6-09F5-40CD-A3AC-D53043BFEB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C0F5C6-09F5-40CD-A3AC-D53043BFEB28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿namespace DDD_ERP_Sample.Forms.Item
 {
-    partial class ItemMenuForm
+    partial class ItemMasterRegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnItemRegister = new Button();
-            SuspendLayout();
-            // 
-            // btnItemRegister
-            // 
-            btnItemRegister.Location = new Point(113, 73);
-            btnItemRegister.Name = "btnItemRegister";
-            btnItemRegister.Size = new Size(94, 29);
-            btnItemRegister.TabIndex = 0;
-            btnItemRegister.Text = "Item登録";
-            btnItemRegister.UseVisualStyleBackColor = true;
-            btnItemRegister.Click += btnItemRegister_Click;
-            // 
-            // ItemMenuForm
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnItemRegister);
-            Name = "ItemMenuForm";
-            Text = "ItemMenu";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ItemMasterRegister";
         }
 
         #endregion
-
-        private Button btnItemRegister;
     }
 }
