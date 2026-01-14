@@ -1,4 +1,5 @@
 ﻿using Item.Application.Services;
+using Item.Application.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,17 @@ namespace DDD_ERP_Sample.Forms.Item
 {
     public partial class ItemMasterRegisterForm : Form
     {
-        public ItemMasterRegisterForm()
+        private readonly ItemApplicationService _service;
+
+        public ItemMasterRegisterForm(ItemApplicationService service)
         {
+            _service = service;
             InitializeComponent();
 
-            ItemApplicationService itemService = new ItemApplicationService();
-            var viewModel = itemService.ItemMasterMaintainShow(null);
+            ItemMasterViewModel vm = service.GetItemMasterViewModel(null);
+
+            //ItemApplicationService itemService = new ItemApplicationService();
+            //var viewModel = itemService.GetItemMasterViewModel(null);
         }
     }
 }

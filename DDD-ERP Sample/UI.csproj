@@ -23,4 +23,10 @@
     <ProjectReference Include="..\Item.Infrastracture\Item.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appSetting.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

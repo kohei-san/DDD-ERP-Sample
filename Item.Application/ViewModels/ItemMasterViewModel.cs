@@ -1,4 +1,5 @@
 ﻿using Item.Application.DTOs;
+using Item.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,12 @@ namespace Item.Application.ViewModels
     public class ItemMasterViewModel
     {
         public ItemDto? Item { get; }
-        public IReadOnlyList<UnitDto> Units { get; }
+        public IReadOnlyList<UnitMaster> Units { get; }
         public IReadOnlyList<ItemTypeDto> ItemTypes { get; }
 
         public ItemMasterViewModel(
             ItemDto? item,
-            IReadOnlyList<UnitDto> units,
+            IReadOnlyList<UnitMaster> units,
             IReadOnlyList<ItemTypeDto> itemTypes)
         {
             Item = item;

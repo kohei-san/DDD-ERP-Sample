@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace DDD_ERP_Sample.Forms.Item
 {
     public partial class ItemMenuForm : Form
     {
-        public ItemMenuForm()
+        private readonly IServiceProvider _provider;
+
+        public ItemMenuForm(IServiceProvider provider)
         {
             InitializeComponent();
+            _provider = provider;
         }
 
         private void btnItemRegister_Click(object sender, EventArgs e)
         {
-            using var form = new ItemMasterRegisterForm();
+            using var form = _provider.GetRequiredService<ItemMasterRegisterForm>();
             form.ShowDialog();
         }
     }

@@ -28,7 +28,7 @@ namespace Item.Infrastracture.Tests.Repositories
 
             using (var context = new AppDbContext(options))
             {
-                var repo = new UnitMasterReporitory(context);
+                var repo = new UnitMasterRepository(context);
 
                 // Act
                 var list = repo.FindAll().ToList();

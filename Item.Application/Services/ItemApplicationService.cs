@@ -1,13 +1,25 @@
 ﻿using Item.Application.DTOs;
 using Item.Application.ViewModels;
+using Item.Domain.Repositories;
 
 namespace Item.Application.Services
 {
     public class ItemApplicationService
     {
+        private readonly IUnitMasterRepository _unitRepo;
+        //private readonly IItemMasterRepository _itemRepo;
+
+        public ItemApplicationService(IUnitMasterRepository unitRepo
+                                        //IItemMasterRepository itemRepo
+            )
+        {
+            _unitRepo = unitRepo;
+            //_itemRepo = itemRepo;
+        }
+
 
         // マスタメンテ画面表示
-        public ItemMasterViewModel ItemMasterMaintainShow(string? itemId)
+        public ItemMasterViewModel GetItemMasterViewModel(string? itemId)
         {
 
             ItemDto? item = null;
@@ -16,13 +28,10 @@ namespace Item.Application.Services
                 item = new ItemDto();
             }
 
+
+
             // 単位マスタ取得(仮)
-            var units = new List<UnitDto>
-            {
-                new UnitDto(),
-                new UnitDto(),
-                new UnitDto()
-            };
+            var units = _unitRepo.FindAll();
 
             // 品目種別マスタ取得(仮)
             var types = new List<ItemTypeDto>{

@@ -3,16 +3,16 @@ using Item.Infrastracture.Db;
 
 namespace Item.Infrastracture.Repositories
 {
-    public class UnitMasterReporitory
+    public class UnitMasterRepository : Domain.Repositories.IUnitMasterRepository
     {
         private readonly AppDbContext appDbContext;
 
-        public UnitMasterReporitory(AppDbContext appDbContext)
+        public UnitMasterRepository(AppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
         }
 
-        public IEnumerable<UnitMaster> FindAll()
+        public List<UnitMaster> FindAll()
         {
             return appDbContext.UnitMasters.ToList();
         }
