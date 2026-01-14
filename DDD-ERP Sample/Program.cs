@@ -26,24 +26,13 @@ namespace DDD_ERP_Sample
 
 
             var services = new ServiceCollection();
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(connectionString));
 
-            // Repository ‚ð DI ‚É“o˜^
-            services.AddScoped<IUnitMasterRepository, UnitMasterRepository>();
-            //services.AddScoped<IItemMasterRepository, ItemMasterRepository>();
-            //services.AddScoped<IItemTypeMasterRepository, ItemTypeMasterRepository>();
-
-            // ApplicationService ‚ð DI ‚É“o˜^
-            services.AddScoped<ItemApplicationService>();
-
-            // Form ‚à DI ‚É“o˜^
-            services.AddScoped<MainMenuForm>();
-            services.AddScoped<ItemMenuForm>();
-            services.AddScoped<Forms.Item.ItemMasterRegisterForm>();
+            // DI‚Ì“o˜^
+            services.AddInfrastructures(connectionString);
+            services.AddApplications();
+            services.AddForms();
 
             var provider = services.BuildServiceProvider();
-
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
