@@ -9,6 +9,6 @@ namespace Item.Domain.Repositories
 {
     public interface IUnitMasterRepository
     {
-        public List<UnitMaster> FindAll();
+        List<UnitMaster> FindAll();
     }
 }

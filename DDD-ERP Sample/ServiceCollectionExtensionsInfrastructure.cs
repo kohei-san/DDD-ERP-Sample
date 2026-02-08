@@ -22,7 +22,7 @@ namespace DDD_ERP_Sample
 
             services.AddScoped<IUnitMasterRepository, UnitMasterRepository>();
             //services.AddScoped<IItemMasterRepository, ItemMasterRepository>();
-            //services.AddScoped<IItemTypeMasterRepository, ItemTypeMasterRepository>();
+            services.AddScoped<IItemTypeMasterRepository, ItemTypeMasterRepository>();
 
             return services;
         }

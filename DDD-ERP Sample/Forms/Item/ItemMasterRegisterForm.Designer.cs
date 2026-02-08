@@ -41,7 +41,7 @@
             lblName = new Label();
             txtName = new TextBox();
             lblType = new Label();
-            cmbType = new ComboBox();
+            cmbItemType = new ComboBox();
             lblUnit = new Label();
             cmbUnit = new ComboBox();
             lblStandardPrice = new Label();
@@ -60,7 +60,7 @@
             tableLayoutPanel.Controls.Add(lblName, 0, 1);
             tableLayoutPanel.Controls.Add(txtName, 1, 1);
             tableLayoutPanel.Controls.Add(lblType, 0, 2);
-            tableLayoutPanel.Controls.Add(cmbType, 1, 2);
+            tableLayoutPanel.Controls.Add(cmbItemType, 1, 2);
             tableLayoutPanel.Controls.Add(lblUnit, 0, 3);
             tableLayoutPanel.Controls.Add(cmbUnit, 1, 3);
             tableLayoutPanel.Controls.Add(lblStandardPrice, 0, 4);
@@ -129,16 +129,16 @@
             lblType.TabIndex = 2;
             lblType.Text = "種類";
             // 
-            // cmbType
+            // cmbItemType
             // 
-            cmbType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbType.FormattingEnabled = true;
-            cmbType.Location = new Point(254, 94);
-            cmbType.Margin = new Padding(3, 3, 16, 3);
-            cmbType.Name = "cmbType";
-            cmbType.Size = new Size(498, 23);
-            cmbType.TabIndex = 2;
+            cmbItemType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbItemType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbItemType.FormattingEnabled = true;
+            cmbItemType.Location = new Point(254, 94);
+            cmbItemType.Margin = new Padding(3, 3, 16, 3);
+            cmbItemType.Name = "cmbItemType";
+            cmbItemType.Size = new Size(498, 23);
+            cmbItemType.TabIndex = 2;
             // 
             // lblUnit
             // 
@@ -197,7 +197,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 288);
             Controls.Add(tableLayoutPanel);
-            Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("MS UI Gothic", 9F);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4);
             Name = "ItemMasterRegisterForm";
@@ -212,7 +212,7 @@
 
         private TextBox txtId;
         private TextBox txtName;
-        private ComboBox cmbType;
+        private ComboBox cmbItemType;
         private ComboBox cmbUnit;
         private TextBox txtStandardPrice;
         private Button btnRegister;

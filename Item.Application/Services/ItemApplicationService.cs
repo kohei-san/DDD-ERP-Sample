@@ -7,14 +7,14 @@ namespace Item.Application.Services
     public class ItemApplicationService
     {
         private readonly IUnitMasterRepository _unitRepo;
-        //private readonly IItemMasterRepository _itemRepo;
+        private readonly IItemTypeMasterRepository _itemTypeRepo;
 
-        public ItemApplicationService(IUnitMasterRepository unitRepo
-                                        //IItemMasterRepository itemRepo
+        public ItemApplicationService(IUnitMasterRepository unitRepo,
+                                        IItemTypeMasterRepository itemTypeRepo
             )
         {
             _unitRepo = unitRepo;
-            //_itemRepo = itemRepo;
+            _itemTypeRepo = itemTypeRepo;
         }
 
 
@@ -28,18 +28,13 @@ namespace Item.Application.Services
                 item = new ItemDto();
             }
 
-
-
             // 単位マスタ取得(仮)
             var units = _unitRepo.FindAll();
-
             // 品目種別マスタ取得(仮)
-            var types = new List<ItemTypeDto>{
-                new ItemTypeDto(),
-                new ItemTypeDto()
-            };
+            var itemTypes = _itemTypeRepo.FindAll();
 
-            ItemMasterViewModel vm = new ItemMasterViewModel(item, units, types);
+            // ViewModelに値をセット
+            ItemMasterViewModel vm = new ItemMasterViewModel(item, units, itemTypes);
             return vm;
         }
         // 登録

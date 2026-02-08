@@ -12,12 +12,12 @@ namespace Item.Application.ViewModels
     {
         public ItemDto? Item { get; }
         public IReadOnlyList<UnitMaster> Units { get; }
-        public IReadOnlyList<ItemTypeDto> ItemTypes { get; }
+        public IReadOnlyList<ItemTypeMaster> ItemTypes { get; }
 
         public ItemMasterViewModel(
             ItemDto? item,
             IReadOnlyList<UnitMaster> units,
-            IReadOnlyList<ItemTypeDto> itemTypes)
+            IReadOnlyList<ItemTypeMaster> itemTypes)
         {
             Item = item;
             Units = units;

@@ -1,5 +1,6 @@
 ﻿using Item.Application.Services;
 using Item.Application.ViewModels;
+using Item.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,8 +24,19 @@ namespace DDD_ERP_Sample.Forms.Item
 
             ItemMasterViewModel vm = service.GetItemMasterViewModel(null);
 
-            //ItemApplicationService itemService = new ItemApplicationService();
-            //var viewModel = itemService.GetItemMasterViewModel(null);
+            BindListToComboBox<UnitMaster>(cmbUnit, vm.Units.ToList(), "Name", "Code");
+            BindListToComboBox<ItemTypeMaster>(cmbItemType, vm.ItemTypes.ToList(), "Name", "Code");
+        }
+
+        private void BindListToComboBox<T>(ComboBox comboBox, List<T> list, string displayMember, string valueMember)
+        {
+            comboBox.DataSource = list;
+            comboBox.DisplayMember = displayMember;
+            comboBox.ValueMember = valueMember;
+
+            // 既定を空欄にする（プレースホルダを使わない場合の安全策）
+            comboBox.SelectedItem = null;
+            comboBox.SelectedIndex = -1;
         }
     }
 }
