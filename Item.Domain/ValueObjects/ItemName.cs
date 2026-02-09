@@ -18,7 +18,13 @@ namespace Item.Domain.ValueObjects
 
         public override string ToString() => Value;
 
-        public static implicit operator string(ItemName n) => n.Value;
+        public static implicit operator string(ItemName c)
+        {
+            if (c is null)
+                throw new ArgumentNullException(nameof(c));
+
+            return c.Value;
+        }
         public static explicit operator ItemName(string s) => new ItemName(s);
     }
 }

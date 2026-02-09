@@ -30,11 +30,14 @@ namespace Item.Domain.Test.ValueObjects
         }
 
         [Fact]
-        public void ImplicitOperator_NullSafe_ReturnsNullString()
+        public void ImplicitOperator_Null_ThrowsArgumentNullException()
         {
-            ItemId? id = null;
-            string? s = id; // implicit operator の null 安全を確認
-            Assert.Null(s);
+            ItemId? name = null;
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                // implicit operator を呼び出す（null を渡した場合、ArgumentNullException を期待）
+                string s = name!;
+            });
         }
 
         [Fact]

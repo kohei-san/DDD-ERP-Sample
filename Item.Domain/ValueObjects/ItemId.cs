@@ -15,9 +15,18 @@ namespace Item.Domain.ValueObjects
 
         public override string ToString() => Value;
 
-        public static implicit operator string?(ItemId? c) => c?.Value;
+        // VO → string  null を許容しない暗黙変換
+        public static implicit operator string(ItemId c)
+        {
+            if (c is null)
+                throw new ArgumentNullException(nameof(c));
 
+            return c.Value;
+        }
+
+        // string → ItemCode は explicit（意図的な変換）
         public static explicit operator ItemId(string s) => new ItemId(s);
     }
 }
+
     
