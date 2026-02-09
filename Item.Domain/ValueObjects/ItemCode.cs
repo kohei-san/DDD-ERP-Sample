@@ -1,23 +1,29 @@
-using System;
-
-namespace Item.Domain.ValueObjects
+public sealed record ItemCode
 {
-    public sealed record ItemCode
+    public string Value { get; }
+
+    public ItemCode(string value)
     {
-        public string Value { get; }
+        if (value is null)
+            throw new ArgumentNullException(nameof(value), "Nullは非許容です。");
 
-        public ItemCode(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("アイテムコードは必須です。", nameof(value));
-            Value = value;
-        }
+        if (string.IsNullOrWhiteSpace(value))
+            throw new ArgumentException("アイテムコードは必須です。", nameof(value));
 
-        public override string ToString() => Value;
-
-        // null に対して安全に動作するよう変更
-        public static implicit operator string(ItemCode? c) => c?.Value;
-
-        public static explicit operator ItemCode(string s) => new ItemCode(s);
+        Value = value;
     }
+
+    public override string ToString() => Value;
+
+    // VO → string  null を許容しない暗黙変換
+    public static implicit operator string(ItemCode c)
+    {
+        if (c is null)
+            throw new ArgumentNullException(nameof(c));
+
+        return c.Value;
+    }
+
+    // string → ItemCode は explicit（意図的な変換）
+    public static explicit operator ItemCode(string s) => new ItemCode(s);
 }

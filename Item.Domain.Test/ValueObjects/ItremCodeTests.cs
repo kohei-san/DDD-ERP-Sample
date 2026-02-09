@@ -33,8 +33,11 @@ namespace Item.Domain.Test.ValueObjects
         public void ImplicitOperator_NullSafe_ReturnsNullString()
         {
             ItemCode? code = null;
-            string? s = code; // implicit operator の null 安全を確認
-            Assert.Null(s);
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                string s = code; // implicit operator を呼び出す
+            });
+
         }
 
         [Fact]
